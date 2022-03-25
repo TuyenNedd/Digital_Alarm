@@ -1,0 +1,195 @@
+@font-face {
+  font-family: digital;
+  src: url("alarmclock.ttf") format("truetype");
+}
+@font-face {
+  font-family: segoeui;
+  src: url("segoeuil.ttf") format("truetype");
+}
+.clock {
+  height: 157px;
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  background-color: rgb(0, 0, 0);
+  padding: 30px;
+  box-shadow: 0 22px 70px 4px rgba(0, 0, 0, 0.322);
+  font-family: "digital", sans-serif;
+  padding-right: 55px;
+
+  /* Glassmorphism CSS Effect */
+  background: rgba(255, 255, 255, 0);
+  border-radius: 16px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(4.5px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+body {
+  padding: 0;
+  margin: 0;
+  background-image: url(BGIMG.png);
+  /* background-size: 100%; */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  user-select: none;
+}
+h1 label {
+  color: transparent;
+  background-image: linear-gradient(209deg, #ffd900 20%, #ff009d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-right: 18px;
+  text-align: center;
+}
+h1 {
+  margin-bottom: 15px;
+}
+p {
+  color: transparent;
+  background-image: linear-gradient(46deg, #f9ff57 20%, #ff0900);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  transform: translateX(12px) translateY(-6px);
+}
+span {
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  font-family: "segoeui", sans-serif;
+  font-weight: lighter;
+  position: absolute;
+  top: 58px;
+}
+.box {
+  /* --b: 5px; */
+  /* --c: red; */
+  --w: 20px;
+  --r: 25px;
+  width: 256px;
+  box-sizing: border-box;
+  display: inline-flex;
+  font-size: 30px;
+  justify-content: center;
+  align-items: center;
+  line-height: 90px;
+  position: absolute;
+}
+.box::before {
+  content: "";
+  position: absolute;
+  top: -214px;
+  left: -30px;
+  right: -99px;
+  bottom: -3px;
+  background: var(--c, red);
+  padding: 3px;
+  border-radius: 16px;
+  -webkit-mask: linear-gradient(#fff 0 0) top / calc(100% - 2 * var(--w))
+      var(--b),
+    linear-gradient(#fff 0 0) bottom/calc(100% - 2 * var(--w)) var(--b),
+    linear-gradient(#fff 0 0) left / var(--b) calc(100% - 2 * var(--w)),
+    linear-gradient(#fff 0 0) right / var(--b) calc(100% - 2 * var(--w)),
+    linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  -webkit-mask-repeat: no-repeat;
+  mask: linear-gradient(#fff 0 0) top / calc(100% - 2 * var(--w)) var(--b),
+    linear-gradient(#fff 0 0) bottom/calc(100% - 2 * var(--w)) var(--b),
+    linear-gradient(#fff 0 0) left / var(--b) calc(100% - 2 * var(--w)),
+    linear-gradient(#fff 0 0) right / var(--b) calc(100% - 2 * var(--w)),
+    linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+}
+.charging-container {
+  height: 110px;
+  width: 225px;
+  border: 8px solid #ffffff;
+  position: absolute;
+  border-radius: 25px;
+  transform: scale(0.1);
+  top: -50px;
+  right: -99px;
+}
+.charging-container::before {
+  content: "";
+  position: absolute;
+  height: 81px;
+  width: 40px;
+  background-color: #ff178c;
+  margin: auto;
+  border-radius: 8px;
+  box-shadow: 50px 0 #ff6f4d, 100px 0 #ffb719, 150px 0 #ffd900;
+  animation: charge 1s infinite;
+  right: 171px;
+  top: 13px;
+}
+.charging-container::after {
+  content: "";
+  position: absolute;
+  margin: auto;
+  height: 55px;
+  width: 20px;
+  background-color: #ffffff;
+  right: -27px;
+  border-radius: 0 9px 9px 0;
+  top: 27px;
+}
+@keyframes charge {
+  22% {
+    box-shadow: 50px 0 transparent, 100px 0 transparent, 150px 0 transparent;
+  }
+  25% {
+    box-shadow: 50px 0 #ff6f4d, 100px 0 transparent, 150px 0 transparent;
+  }
+  47% {
+    box-shadow: 50px 0 #ff6f4d, 100px 0 transparent, 150px 0 transparent;
+  }
+  50% {
+    box-shadow: 50px 0 #ff6f4d, 100px 0 transparent, 150px 0 transparent;
+  }
+  72% {
+    box-shadow: 50px 0 #ff6f4d, 100px 0 #ffb719, 150px 0 transparent;
+  }
+  75% {
+    box-shadow: 50px 0 #ff6f4d, 100px 0 #ffb719, 150px 0 #ffd900;
+  }
+  95% {
+    box-shadow: 50px 0 #ff6f4d, 100px 0 #ffb719, 150px 0 #ffd900;
+  }
+}
+@keyframes change {
+  0%,
+  20% {
+    background-size: 0, auto, auto, 0, 0, 0;
+  }
+  20%,
+  40% {
+    background-size: auto, auto, auto, 0, 0, 0;
+  }
+  40%,
+  60% {
+    background-size: auto, auto, auto, auto, 0, 0;
+  }
+  60%,
+  80% {
+    background-size: auto, auto, auto, auto, auto, 0;
+  }
+  80%,
+  100% {
+    background-size: auto, auto, auto, auto, auto, auto;
+  }
+}
+.battery {
+  position: absolute;
+  right: 15px;
+  top: 8px;
+}

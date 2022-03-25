@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Alarm</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="SCIC.svg" />
+  </head>
+  <body>
+    <div class="clock">
+      <div class="battery"><div class="charging-container"></div></div>
+      <script src="https://cdn.lordicon.com/lusqsztk.js"></script>
+      <lord-icon
+        src="https://cdn.lordicon.com/abgtphux.json"
+        trigger="loop"
+        colors="primary:#ff5268"
+        state="loop"
+        style="
+          width: 40px;
+          height: 40px;
+          position: absolute;
+          right: 172.5px;
+          top: 9px;
+        "
+      >
+      </lord-icon>
+
+      <h1><label id="time"></label></h1>
+
+      <script src="alarm.js"></script>
+      <script>
+        startTime();
+      </script>
+
+      <script src="display.js"></script>
+      <script>
+        setTimeout(display(), 1000);
+      </script>
+
+      <div
+        class="box"
+        style="
+          --c: repeating-linear-gradient(221deg, #ffd900 57%, #ff0050);
+          --w: 21px;
+          --b: 4px;
+          --c: repeating-linear-gradient(188deg, #ffd900 65%, #ff0050);
+          --w: 22px;
+          --b: 4px;
+          --r: -48px;
+          --r: 85px;
+        "
+      ></div>
+    </div>
+  </body>
+</html>
