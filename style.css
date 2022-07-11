@@ -8,7 +8,7 @@
 }
 .clock {
   height: 157px;
-  width: 300px; 
+  width: 300px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -63,7 +63,7 @@ p {
   transform: translateX(12px) translateY(-6px);
 }
 span {
-  color: white;
+  color: red;
   font-size: 12px;
   text-align: center;
   font-family: "segoeui", sans-serif;
