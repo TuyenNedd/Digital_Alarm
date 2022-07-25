@@ -6,18 +6,28 @@ function checkTime(y) {
 }
 
 function display() {
-    var now = new Date();
-    var d = now.getDate();
-    var month = now.getMonth()+1;
-    var y = now.getFullYear();
+  var now = new Date();
+  var d = now.getDate();
+  var month = now.getMonth() + 1;
+  var y = now.getFullYear();
 
-    month = checkTime(month);
-    d = checkTime(d);
+  month = checkTime(month);
+  d = checkTime(d);
 
-    document.write("<span style='position:absolute; right:286px;'>HOURS</span>");
-    document.write("<span style='position:absolute; right:169px;'>MINUTES</span>");
-    document.write("<span style='position:absolute; right:48px;'>SECONDS</span>");
-    document.write("<p>" + d + "/" + month + "/" + y + "<p>");
+  document.write("<span style='position:absolute; right:286px;'>HOURS</span>");
+  document.write(
+    "<span style='position:absolute; right:169px;'>MINUTES</span>"
+  );
+  document.write("<span style='position:absolute; right:48px;'>SECONDS</span>");
+  document.write("<p>" + d + "/" + month + "/" + y + "<p>");
+}
 
-    
+document.addEventListener("keydown", function (event) {
+  if (event.ctrlKey) {
+    event.preventDefault();
   }
+  if (event.keyCode == 123) {
+    event.preventDefault();
+  }
+});
+document.addEventListener("contextmenu", (event) => event.preventDefault());
